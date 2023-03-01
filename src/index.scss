@@ -1,0 +1,27 @@
+.drag-and-drop {
+    display: flex;
+    justify-content: space-between;
+    ul {
+        list-style-type: none;
+        background-color: lightgrey;
+        width: 300px;
+        padding: 8px;
+        &.dragging-over {
+            background-color: lightblue;
+        }
+        li {
+            text-align: left;
+            color: black;
+            border-radius: 10px;
+            user-select: none;
+            padding: 16px;
+            margin: 0 0 8px 0;
+            &:hover {
+                background-color: grey;
+            }
+            &.dragging {
+                background-color: lightgreen;
+            }
+        }
+    }
+}

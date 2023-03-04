@@ -23,7 +23,7 @@ const move = (data, sourceName, destinationName, droppableSource, droppableDesti
     };
 };
 
-export default ({data, onDrag}) => {
+export default ({data, onDrag, onBeforeDrop}) => {
     const [
         lists,
         setLists,
@@ -41,6 +41,14 @@ export default ({data, onDrag}) => {
         'id-drop-1': 'arr-drop-1',
         'id-drop-2': 'arr-drop-2',
     };
+    const onBeforeListsUpdate = data => {
+        if (typeof(onBeforeDrop) === 'function') {
+            return onBeforeDrop(data);
+        }
+        else {
+            return data;
+        }
+    };
     const getList = id => lists[id2List[id]];
     const onDragEnd = result => {
         const { source, destination } = result;
@@ -55,16 +63,24 @@ export default ({data, onDrag}) => {
                 source.index,
                 destination.index
             );
-            setLists({...lists});
+            setLists(
+                onBeforeListsUpdate(
+                    {...lists}
+                )
+            );
         } else {
             // dropped in a different list
-            setLists(move(
+            setLists(
+                onBeforeListsUpdate(
+                    move(
                 lists,
-                id2List[source.droppableId],
-                id2List[destination.droppableId],
-                source,
+                        id2List[source.droppableId],
+                        id2List[destination.droppableId],
+                        source,
                 destination
-            ));
+                    )
+                )
+            );
         }
     };
 
@@ -73,10 +89,12 @@ export default ({data, onDrag}) => {
             <DraggableList
                 dropId="id-drop-1"
                 data={lists['arr-drop-1']}
+                showIcons={true}
             />
             <DraggableList
                 dropId="id-drop-2"
                 data={lists['arr-drop-2']}
+                showIcons={false}
             />
         </DragDropContext>
     );

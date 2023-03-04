@@ -1,7 +1,9 @@
 import React from 'react';
 import DragAndDrop from './components/drag-and-drop';
+import CodeFormatter from './components/drag-and-drop/code-formatter';
 import Task from '../tasks/fibonacci?raw'
 
+const DragAndDropFormated = CodeFormatter(DragAndDrop);
 const linesArray = [
     ...Task.split('\n'),
     ...Task.split('\n'),
@@ -20,14 +22,14 @@ const linesArray = [
 
 export default () => (
     <div className="drag-and-drop">
-        <DragAndDrop
+        <DragAndDropFormated
             data={[
                 linesArray,
                 []
             ]}
             onDrag={(data) => {
                 if (
-                    data.map(({content}) => content).join('')
+                    data.map(({content}) => content.trim()).join('')
                     === Task.split('\n').map(el => el.trim()).join('')
                 ) {
                     alert('CONGRATZ! 🎉🥳👏🎊✨🙌🤩🥂');

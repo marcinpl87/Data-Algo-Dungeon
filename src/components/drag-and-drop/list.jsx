@@ -2,7 +2,7 @@ import React from 'react';
 import { Droppable } from 'react-beautiful-dnd';
 import DraggableListElement from './element';
 
-export default ({dropId, data}) => (
+export default ({dropId, data, showIcons}) => (
     <Droppable droppableId={dropId}>
         {(provided, snapshot) => (
             <ul
@@ -18,6 +18,7 @@ export default ({dropId, data}) => (
                         key={item.id}
                         item={item}
                         index={index}
+                        showIcons={showIcons}
                     />
                 ))}
                 {provided.placeholder}

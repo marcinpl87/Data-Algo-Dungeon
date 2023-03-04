@@ -2,9 +2,10 @@
     display: flex;
     justify-content: space-between;
     ul {
+        font-family: monospace;
         list-style-type: none;
         background-color: lightgrey;
-        width: 300px;
+        width: 400px;
         padding: 8px;
         &.dragging-over {
             background-color: lightblue;
@@ -12,7 +13,7 @@
         li {
             text-align: left;
             color: black;
-            border-radius: 10px;
+            border-radius: 5px;
             user-select: none;
             padding: 16px;
             margin: 0 0 8px 0;
@@ -21,7 +22,29 @@
             }
             &.dragging {
                 background-color: lightgreen;
+                rotate: 3deg;
             }
+        }
+        &:first-child li {
+            display: inline-flex;
+            align-items: center;
+            background-color: white;
+            border: 1px solid black;
+            margin: 5px;
+            padding-left: 4px;
+            svg {
+                margin-right: 10px;
+                font-size: 0.6rem;
+            }
+            &.dragging {
+                background-color: lightgreen;
+            }
+        }
+        &:nth-child(2) li {
+            padding-top: 4px;
+            padding-bottom: 4px;
+            white-space: pre;
+            margin: 0;
         }
     }
 }

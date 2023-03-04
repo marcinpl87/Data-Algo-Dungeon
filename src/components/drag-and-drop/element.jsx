@@ -1,7 +1,8 @@
 import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
+import { FaGripVertical } from 'react-icons/fa';
 
-export default ({item, index}) => (
+export default ({item, index, showIcons}) => (
     <Draggable
         draggableId={item.id}
         index={index}>
@@ -17,6 +18,7 @@ export default ({item, index}) => (
                         : ''
                 }
             >
+                {showIcons && <FaGripVertical />}
                 {item.content}
             </li>
         )}

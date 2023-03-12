@@ -5,7 +5,8 @@ import { FaGripVertical } from 'react-icons/fa';
 export default ({item, index, showIcons}) => (
     <Draggable
         draggableId={item.id}
-        index={index}>
+        index={index}
+    >
         {(provided, snapshot) => (
             <li
                 ref={provided.innerRef}

@@ -73,11 +73,11 @@ export default ({data, onDrag, onBeforeDrop}) => {
             setLists(
                 onBeforeListsUpdate(
                     move(
-                lists,
+                        lists,
                         id2List[source.droppableId],
                         id2List[destination.droppableId],
                         source,
-                destination
+                        destination
                     )
                 )
             );

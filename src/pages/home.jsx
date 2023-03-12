@@ -1,7 +1,7 @@
 import React from 'react';
-import DragAndDrop from './components/drag-and-drop';
-import CodeFormatter from './components/drag-and-drop/code-formatter';
-import Task from '../tasks/fibonacci?raw'
+import DragAndDrop from '../components/drag-and-drop';
+import CodeFormatter from '../components/drag-and-drop/code-formatter';
+import Task from '../../tasks/fibonacci?raw'
 
 const DragAndDropFormated = CodeFormatter(DragAndDrop);
 const linesArray = [

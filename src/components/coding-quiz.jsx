@@ -5,8 +5,8 @@ import CodeFormatter from './drag-and-drop/code-formatter';
 export default ({task}) => {
     const DragAndDropFormated = CodeFormatter(DragAndDrop);
     const linesArray = [
-        ...task.split('\n'),
-        ...task.split('\n'),
+        ...task,
+        ...task,
     ]
         .map(
             (el, i) => {
@@ -30,7 +30,7 @@ export default ({task}) => {
                 onDrag={(data) => {
                     if (
                         data.map(({content}) => content.trim()).join('')
-                        === task.split('\n').map(el => el.trim()).join('')
+                        === task.map(el => el.trim()).join('')
                     ) {
                         alert('CONGRATZ! 🎉🥳👏🎊✨🙌🤩🥂');
                     }

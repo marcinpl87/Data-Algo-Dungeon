@@ -9,8 +9,8 @@ export default ({dropId, data, showIcons}) => (
                 ref={provided.innerRef}
                 className={
                     snapshot.isDraggingOver
-                        ? 'dragging-over'
-                        : ''
+                        ? 'mb-0 dragging-over'
+                        : 'mb-0'
                     }
             >
                 {data.map((item, index) => (

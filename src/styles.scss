@@ -7,7 +7,6 @@
     ul {
         font-family: monospace;
         list-style-type: none;
-        background-color: lightgrey;
         width: 400px;
         padding: 8px;
         &.dragging-over {
@@ -52,4 +51,8 @@
             margin: 0;
         }
     }
+}
+
+.accordion-button:focus {
+    box-shadow: none;
 }

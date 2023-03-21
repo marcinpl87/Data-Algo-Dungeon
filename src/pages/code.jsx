@@ -1,5 +1,5 @@
 import React from 'react';
-import Tasks from '../../tasks/fibonacci?raw';
+import Tasks from '../../tasks/coding?raw';
 import Accordion from '../components/accordion';
 import CodingQuiz from '../components/coding-quiz';
 

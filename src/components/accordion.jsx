@@ -14,7 +14,7 @@ export default ({items}) => (
                 <Accordion.Body className="p-0">
                     <Card className="rounded-0 border-bottom-0">
                         <Card.Img variant="top" className="rounded-0" src={el.img} />
-                        <Card.Body>
+                        <Card.Body className="p-0">
                             <Content />
                         </Card.Body>
                         {

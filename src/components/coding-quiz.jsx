@@ -28,8 +28,8 @@ export default ({task}) => {
             className="ps-3 pt-3"
         >
             <Tab eventKey="home" title="Drag & drop">
-        <div className="drag-and-drop">
-            <DragAndDropFormated
+                <div className="drag-and-drop">
+                    <DragAndDropFormated
                         data={[
                             linesArray,
                             []
@@ -42,8 +42,8 @@ export default ({task}) => {
                                 alert('CONGRATZ! 🎉🥳👏🎊✨🙌🤩🥂');
                             }
                         }}
-            />
-        </div>
+                    />
+                </div>
             </Tab>
             <Tab eventKey="solution" title="Solution">
                 <div className="p-3 code-quiz-solution">

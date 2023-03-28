@@ -7,7 +7,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "marcinpl87-library": "^0.0.2",
+    "marcinpl87-library": "^0.0.5",
     "react": "^17.0.0",
     "react-beautiful-dnd": "^13.1.0",
     "react-bootstrap": "^2.7.2",

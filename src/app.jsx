@@ -8,10 +8,12 @@ import {
 import {
     FaBook,
     FaHome,
+    FaArrowUp,
 } from 'react-icons/fa';
 import {
     Layout,
     Sidebar,
+    ScrollTop,
 } from 'marcinpl87-library';
 import Home from './pages/home';
 import Code from './pages/code';
@@ -53,5 +55,9 @@ export default () => (
                 <Route path="code" element={<Code />} />
             </Route>
         </Routes>
+        <ScrollTop
+            offset={300}
+            iconComp={FaArrowUp}
+        />
     </Layout>
 );
